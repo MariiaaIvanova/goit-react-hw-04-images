@@ -14,14 +14,15 @@ const handleKeyDown = event => {
       onClose();
   }
   };
-  window.addEventListener('keydown', this.handleKeyDown);
+  window.addEventListener('keydown', handleKeyDown);
   document.body.style.overflow = 'hidden';
-
+  
 return () => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'auto';
     };
-}, [onClose]);
+  }, [onClose]);
+
   
 const handleBackdropClick = event => {
   if (event.currentTarget === event.target) {
@@ -36,6 +37,7 @@ return createPortal(
       modalRoot
     );
  };
+
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
